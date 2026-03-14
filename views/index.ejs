@@ -1,0 +1,22 @@
+<%- include('./partials/_header.ejs') %>
+
+    <section class="hero">
+        <h1>Loop Log</h1>
+        <p>Track your crochet projects in one cozy place.</p>
+
+        <% if (!user) { %>
+            <div class="button-row">
+                <a class="button" href="/auth/sign-up">Get Started</a>
+                <a class="button secondary" href="/auth/sign-in">Sign In</a>
+            </div>
+            <% } else { %>
+                <div class="button-row">
+                    <a class="button" href="/projects">Go to My Projects</a>
+                </div>
+                <% } %>
+    </section>
+
+    </main>
+    </body>
+
+    </html>

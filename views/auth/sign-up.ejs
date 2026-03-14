@@ -1,0 +1,21 @@
+<%- include('../partials/_header.ejs') %>
+
+    <h1>Create an Account</h1>
+
+    <form action="/auth/sign-up" method="POST" class="form-card">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    </main>
+    </body>
+
+    </html>
