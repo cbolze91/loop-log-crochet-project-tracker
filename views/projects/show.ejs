@@ -1,0 +1,45 @@
+<%- include('../partials/_header.ejs') %>
+
+    <section class="show-layout">
+        <div class="show-image">
+            <img src="<%= project.imageUrl || 'https://placehold.co/500x350?text=Loop+Log' %>"
+                alt="Image for <%= project.title %>">
+        </div>
+
+        <div class="show-details">
+            <h1>
+                <%= project.title %>
+            </h1>
+           
+            <p><strong>Yarn:</strong>
+                <%= project.yarn || 'Not added' %>
+            </p>
+            <p><strong>Hook Size:</strong>
+                <%= project.hookSize || 'Not added' %>
+            </p>
+            <p><strong>Difficulty:</strong>
+                <%= project.difficulty %>
+            </p>
+            <p><strong>Status:</strong>
+                <%= project.status %>
+            </p>
+            <p><strong>Pattern:</strong>
+                <%= project.pattern || 'No description yet.' %>
+            </p>
+
+            <% if (project.owner.equals(user._id)) { %>
+                <div class="button-row">
+                    <a class="button" href="/projects/<%= project._id %>/edit">Edit Project</a>
+
+                    <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="button danger">Delete Project</button>
+                    </form>
+                </div>
+                <% } %>
+        </div>
+    </section>
+
+    </main>
+    </body>
+
+    </html>

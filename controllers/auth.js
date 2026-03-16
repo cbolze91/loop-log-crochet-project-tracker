@@ -1,13 +1,23 @@
+/***********************************************************/
+//Required Modules
+/***********************************************************/
+
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
 
+/***********************************************************/
+//Sign Up Routes
+/***********************************************************/
+
+//Render Sign-up form
 router.get('/sign-up', (req, res) => {
     res.render('auth/sign-up.ejs');
 });
 
+//Create new user
 router.post('/sign-up', async (req, res) => {
     try{
         const userInDatabase = await User.findOne({ username: req.body.username });
@@ -44,10 +54,16 @@ router.post('/sign-up', async (req, res) => {
     }
 });
 
+/***********************************************************/
+//Sign In Routes
+/***********************************************************/
+
+//Render sign-in form
 router.get('/sign-in', (req, res) => {
   res.render('auth/sign-in.ejs');
 });
 
+//Sign in existing user
 router.post('/sign-in', async (req, res) => {
   try {
     const userInDatabase = await User.findOne({ username: req.body.username });
@@ -83,6 +99,11 @@ router.post('/sign-in', async (req, res) => {
   }
   });
 
+/***********************************************************/
+//Sign Out Route
+/***********************************************************/
+
+//Log out user
 router.get('/sign-out', (req, res) => {
   req.session.destroy(() => {
     res.redirect('/');

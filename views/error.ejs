@@ -1,0 +1,21 @@
+<%- include('./partials/_header.ejs') %>
+
+    <section class="form-card">
+        <h1>Something went wrong</h1>
+        <p>
+            <%= error %>
+        </p>
+
+        <div class="button-row">
+            <a class="button" href="/">Go Home</a>
+
+            <% if (user) { %>
+                <a class="button secondary" href="/projects">Back to My Projects</a>
+                <% } %>
+        </div>
+    </section>
+
+    </main>
+    </body>
+
+    </html>

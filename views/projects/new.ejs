@@ -1,0 +1,41 @@
+<%- include('../partials/_header.ejs') %>
+
+    <h1>Create New Project</h1>
+
+    <form action="/projects" method="POST" class="form-card">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required>
+
+        <label for="yarn">Yarn</label>
+        <input type="text" name="yarn" id="yarn">
+
+        <label for="hookSize">Hook Size</label>
+        <input type="text" name="hookSize" id="hookSize">
+
+        <label for="difficulty">Difficulty</label>
+        <select name="difficulty" id="difficulty">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Finished">Finished</option>
+        </select>
+
+        <label for="imageUrl">Image URL</label>
+        <input type="text" name="imageUrl" id="imageUrl">
+
+        <label for="pattern">Pattern</label>
+        <textarea name="pattern" id="pattern"></textarea>
+
+        <button type="submit">Create Project</button>
+    </form>
+
+    </main>
+    </body>
+
+    </html>

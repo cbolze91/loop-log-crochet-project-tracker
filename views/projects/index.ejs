@@ -1,0 +1,42 @@
+<%- include('../partials/_header.ejs') %>
+
+    <section class="page-header">
+        <h1>My Crochet Projects</h1>
+        <a class="button" href="/projects/new">+ Add New Project</a>
+    </section>
+
+    <section class="card-grid">
+        <% if (projects.length===0) { %>
+            <p>You have not added any projects yet.</p>
+            <% } %>
+
+                <% projects.forEach((project)=> { %>
+                    <article class="project-card">
+                        <img src="<%= project.imageUrl || 'https://placehold.co/400x250?text=Loop+Log' %>"
+                            alt="Image for <%= project.title %>">
+
+                        <h2>
+                            <%= project.title %>
+                        </h2>
+                        <p><strong>Status:</strong>
+                            <%= project.status %>
+                        </p>
+                        <p><strong>Difficulty:</strong>
+                            <%= project.difficulty %>
+                        </p>
+                        <p><strong>Yarn:</strong>
+                            <%= project.yarn || 'Not added' %>
+                        </p>
+                        <p><strong>Hook Size:</strong>
+                            <%= project.hookSize || 'Not added' %>
+                        </p>
+
+                        <a class="button" href="/projects/<%= project._id %>">View Details</a>
+                    </article>
+                    <% }) %>
+    </section>
+
+    </main>
+    </body>
+
+    </html>
