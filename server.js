@@ -41,7 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 // Allows PUT and DELETE requests in forms
 app.use(methodOverride('_method'));
 
-// Loads CSS and othe rpublic files
+// Loads CSS and other public files
 app.use(express.static('public'));
 
 /***********************************************************/
